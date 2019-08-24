@@ -16,6 +16,6 @@ object SparkWriteApplication extends App {
 
   val numbersRdd = sc.parallelize((1 to 80000).toList)
   print(numbersRdd.count)
-    numbersRdd.saveAsTextFile("hdfs://localhost:8020/tmp/nsadsdasad-umbers-as-text-4564")
+    numbersRdd.saveAsTextFile("hdfs://namenode:8020/tmp/nsadsdasad-umbers-as-text-4564")
 }
 
