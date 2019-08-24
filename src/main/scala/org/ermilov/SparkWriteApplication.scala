@@ -3,7 +3,7 @@ package org.ermilov
 import org.apache.spark.{SparkConf, SparkContext}
 
 object SparkWriteApplication extends App {
-  val config = new SparkConf().setMaster("spark://spark-master:7077").setAppName("SparkWriteApplication")
+  val config = new SparkConf().setMaster("spark://172.17.0.1:7077").setAppName("SparkWriteApplication")
     .set("spark.driver.memory", "500m")
     .set("spark.executor.memory", "500m")
     .set("spark.executor.memoryOverhead", "100m")
