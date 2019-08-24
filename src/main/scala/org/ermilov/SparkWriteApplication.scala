@@ -34,7 +34,7 @@ object SparkWriteApplication extends App {
 
   //Kafka Stream
   val stream: DStream[String] = KafkaConsumerFactory.createKafkaMessageStream(Array("first_topic"), ssc).map(record => record.value())
-  stream.print()
+  stream.foreachRDD(rdd => print(rdd))
 
   ssc.start()
   ssc.awaitTermination()
