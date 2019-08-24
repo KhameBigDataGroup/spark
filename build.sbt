@@ -9,6 +9,7 @@ lazy val root = (project in file(".")).
     )),
     name := "SparkWriteApplication",
     libraryDependencies += scalaTest % Test,
+    libraryDependencies += spark,
     mainClass in assembly := Some("org.ermilov.SparkWriteApplication"),
     test in assembly := {}
   )
