@@ -18,14 +18,17 @@ object SparkWriteApplication extends App {
 
   val sc = new SparkContext(config)
 
-  val ssc = new StreamingContext(sc, Seconds(10))
+  val ssc = new StreamingContext(sc, Seconds(5))
 
   ssc.checkpoint("/tmp/")
 
-  //Kafka Stream
-  val stream: DStream[String] = KafkaConsumerFactory.createKafkaMessageStream(Array("first_topic"), ssc).map(record => record.value())
-  stream.foreachRDD(rdd => print(rdd))
 
+  //Kafka Stream
+  print("hello")
+  val stream: DStream[String] = KafkaConsumerFactory.createKafkaMessageStream(Array("first_topic"), ssc).map(record => record.value())
+  print("salaam")
+  stream.foreachRDD(rdd => print(rdd.toString()))
+  print("Byeeee")
   ssc.start()
   ssc.awaitTermination()
   ssc.stop()
