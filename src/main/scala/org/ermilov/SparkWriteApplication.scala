@@ -20,7 +20,7 @@ object SparkWriteApplication extends App {
 
   val ssc = new StreamingContext(sc, Seconds(10))
 
-  val brokers = "127.17.0.1:9092"
+  val brokers = "172.17.0.1:9092"
 
   val kafkaParams: Map[String, Object] = Map[String, Object](
     "bootstrap.servers" -> brokers,
