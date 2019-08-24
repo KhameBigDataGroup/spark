@@ -20,16 +20,6 @@ object SparkWriteApplication extends App {
 
   val ssc = new StreamingContext(sc, Seconds(10))
 
-  val brokers = "172.17.0.1:9092"
-
-  val kafkaParams: Map[String, Object] = Map[String, Object](
-    "bootstrap.servers" -> brokers,
-    "key.deserializer" -> classOf[StringDeserializer],
-    "value.deserializer" -> classOf[StringDeserializer],
-    "group.id" -> "group_id",
-    "auto.offset.reset" -> "earliest",
-    "enable.auto.commit" -> (false: java.lang.Boolean))
-
   ssc.checkpoint("/tmp/")
 
   //Kafka Stream

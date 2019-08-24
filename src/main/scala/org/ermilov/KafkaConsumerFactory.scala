@@ -8,7 +8,7 @@ import org.apache.spark.streaming.kafka010.{ConsumerStrategies, KafkaUtils, Loca
 
 object KafkaConsumerFactory extends Serializable {
 
-  val brokers = "127.17.0.1:9092"
+  val brokers = "172.17.0.1:9092"
 
   val kafkaParams: Map[String, Object] = Map[String, Object](
     "bootstrap.servers" -> brokers,
