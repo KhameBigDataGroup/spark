@@ -18,7 +18,7 @@ object SparkWriteApplication extends App {
 
   val sc = new SparkContext(config)
 
-  val ssc = new StreamingContext(sc, Seconds(5))
+  val ssc = new StreamingContext(sc, Seconds(1))
 
   ssc.checkpoint("/tmp/")
 
@@ -32,6 +32,7 @@ object SparkWriteApplication extends App {
   stream.print()
 //  stream.map(e => println(e))
 //  stream.foreachRDD(rdd => print(rdd.collect().toString()))
+  stream.saveAsTextFiles("hdfs://namenode:8020/test/first_topic")
   print("Byeeee")
   ssc.start()
   ssc.awaitTermination()
