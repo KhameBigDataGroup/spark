@@ -29,11 +29,10 @@ object SparkWriteApplication extends App {
 //  print("salaam")
 
 //  print(stream.count())
-  stream.print()
+//  stream.print()
 //  stream.map(e => println(e))
 //  stream.foreachRDD(rdd => print(rdd.collect().toString()))
-  stream.saveAsTextFiles("hdfs://namenode:8020/test/first_topic")
-  print("Byeeee")
+  stream.saveAsTextFiles("hdfs://namenode:8020/test/first_topic-2")
   ssc.start()
   ssc.awaitTermination()
   ssc.stop()
