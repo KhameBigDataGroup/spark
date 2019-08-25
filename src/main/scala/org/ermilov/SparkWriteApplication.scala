@@ -30,8 +30,8 @@ object SparkWriteApplication extends App {
 
 //  print(stream.count())
 //  stream.print()
-//  stream.map(e => println(e))
-  stream.foreachRDD(rdd => print(rdd.collect().toString()))
+  stream.map(e => println(e))
+//  stream.foreachRDD(rdd => print(rdd.collect().toString()))
   print("Byeeee")
   ssc.start()
   ssc.awaitTermination()
