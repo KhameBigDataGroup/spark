@@ -18,7 +18,7 @@ object SparkWriteApplication extends App {
 
   val sc = new SparkContext(config)
 
-  val ssc = new StreamingContext(sc, Seconds(20))
+  val ssc = new StreamingContext(sc, Seconds(2))
 
   ssc.checkpoint("/bitcoin/checkpoint")
 
