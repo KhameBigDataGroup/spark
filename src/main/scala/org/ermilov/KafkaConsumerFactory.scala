@@ -14,7 +14,7 @@ object KafkaConsumerFactory extends Serializable {
     "bootstrap.servers" -> brokers,
     "key.deserializer" -> classOf[StringDeserializer],
     "value.deserializer" -> classOf[StringDeserializer],
-    "group.id" -> "gid",
+    "group.id" -> "gid2",
     "auto.offset.reset" -> "earliest",
     "enable.auto.commit" -> (false: java.lang.Boolean))
 
