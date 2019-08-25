@@ -32,7 +32,7 @@ object SparkWriteApplication extends App {
 //  stream.print()
 //  stream.map(e => println(e))
 //  stream.foreachRDD(rdd => print(rdd.collect().toString()))
-  stream.saveAsTextFiles("hdfs://namenode:8020/test/first_topic-2")
+  stream.saveAsTextFiles("hdfs://namenode:8020/test/first_topic-3")
   ssc.start()
   ssc.awaitTermination()
   ssc.stop()
